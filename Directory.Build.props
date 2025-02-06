@@ -1,0 +1,47 @@
+﻿<Project>
+  <!-- These properties will be shared for all projects -->
+
+  <PropertyGroup>
+    <Product>Topshelf</Product>
+    <Copyright>Copyright 2007-2018 Chris Patterson, Dru Sellers, Travis Smith, et. al.</Copyright>
+    <Authors>Chris Patterson;Dru Sellers;Travis Smith</Authors>
+    <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>CS1587,CS1591,CS1998,CS0675,CS1998,CS3008,CS3001,NU5105</NoWarn>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>portable</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugType>full</DebugType>
+    <DefineConstants>DEBUG;TRACE;$(DefineConstants)</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE;$(DefineConstants)</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(MSBuildProjectName.Contains(Tests))' == false">
+    <!-- Nuget Package Details -->
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <Description>Topshelf is an open source project for hosting services without friction. By referencing Topshelf, your console application *becomes* a service installer with a comprehensive set of command-line options for installing, configuring, and running your application as a service.</Description>
+    <IsPackable>True</IsPackable>
+
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+    <!-- SourceLink Config, needs nuget package in each csproj Microsoft.SourceLink.GitHub in order to work -->
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(MSBuildProjectName.Contains(Tests))' == true">
+    <NoWarn>$(NoWarn),CS0618</NoWarn>
+    <IsTestProject>true</IsTestProject>
+    <IsPackable>False</IsPackable>
+  </PropertyGroup>
+
+</Project>

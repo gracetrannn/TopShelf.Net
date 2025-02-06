@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SampleTopshelfService": {
+      "commandName": "Project",
+      "commandLineArgs": "install"
+    }
+  }
+}

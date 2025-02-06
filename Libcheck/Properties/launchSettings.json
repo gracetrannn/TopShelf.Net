@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Libcheck": {
+      "commandName": "Project",
+      "commandLineArgs": "install"
+    }
+  }
+}

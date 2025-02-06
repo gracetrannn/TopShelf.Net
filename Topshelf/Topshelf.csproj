@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageTags>Topshelf</PackageTags>
+    <Description>$(Description)</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TopShelf.ServiceInstaller\TopShelf.ServiceInstaller.csproj" />
+	<PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="9.0.1" />
+	<PackageReference Include="Microsoft.PowerShell.SDK" Version="7.4.6" />
+	<PackageReference Include="Microsoft.Win32.SystemEvents" Version="9.0.1" />
+	<PackageReference Include="System.Management.Automation" Version="7.4.6" />
+	<PackageReference Include="System.ServiceProcess.ServiceController" Version="9.0.1" />
+  </ItemGroup>
+
+</Project>
